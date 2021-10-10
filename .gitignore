@@ -1,2 +1,5 @@
 target/
 bungee_extras.iml
+.DS_Store
+.idea
+.idea/
