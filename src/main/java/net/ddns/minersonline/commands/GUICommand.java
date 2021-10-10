@@ -6,6 +6,7 @@ import net.md_5.bungee.api.CommandSender;
 import net.md_5.bungee.api.chat.TextComponent;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
 import net.md_5.bungee.api.plugin.Command;
+import org.geysermc.floodgate.api.FloodgateApi;
 
 public class GUICommand extends Command {
     BungeeExtras main;
@@ -21,7 +22,7 @@ public class GUICommand extends Command {
                     ChatColor.AQUA+"Your UUID is: "+ ChatColor.GREEN+player.getUniqueId().toString()
             ));
             String edition="Java";
-            if(main.flood_api.isFloodgatePlayer(player.getUniqueId())) {
+            if(FloodgateApi.getInstance().isFloodgatePlayer(player.getUniqueId())) {
                 edition="Bedrock";
             }
             player.sendMessage(new TextComponent(
