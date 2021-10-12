@@ -1,4 +1,4 @@
 name: BungeeExtras
-main: net.ddns.minersonline.spigot.BungeeExtras
+main: net.ddns.minersonline.bungee.BungeeExtras
 version: ${project.version}
 author: ajh123
