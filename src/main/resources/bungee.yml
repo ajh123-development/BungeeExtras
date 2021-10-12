@@ -1,4 +1,4 @@
 name: BungeeExtras
 main: net.ddns.minersonline.bungee.BungeeExtras
-version: ${project.version}
+version: 1.0
 author: ajh123
