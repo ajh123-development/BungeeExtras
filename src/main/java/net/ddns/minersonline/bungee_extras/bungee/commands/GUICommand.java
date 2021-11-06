@@ -1,6 +1,6 @@
-package net.ddns.minersonline.bungee.commands;
+package net.ddns.minersonline.bungee_extras.bungee.commands;
 
-import net.ddns.minersonline.bungee.BungeeExtras;
+import net.ddns.minersonline.bungee_extras.bungee.BungeeExtras;
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.CommandSender;
 import net.md_5.bungee.api.chat.TextComponent;

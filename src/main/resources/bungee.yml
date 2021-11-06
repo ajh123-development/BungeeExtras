@@ -1,4 +1,4 @@
 name: BungeeExtras
-main: net.ddns.minersonline.bungee.BungeeExtras
+main: net.ddns.minersonline.bungee_extras.bungee.BungeeExtras
 version: 1.0
 author: ajh123

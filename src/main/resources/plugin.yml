@@ -1,4 +1,13 @@
 name: BungeeExtras
-main: net.ddns.minersonline.spigot.BungeeExtras
+main: net.ddns.minersonline.bungee_extras.spigot.BungeeExtras
+website: https://github.com/ajh123-developmemt/BungeeExtras
 version: 1.0
 author: ajh123
+api-version: 1.17
+load: POSTWORLD
+softdepend: [Skript]
+commands:
+  inserv:
+    description: Server Info command
+    usage: /inserv bungee_server
+    permission: bungee_extras.commands.inserv

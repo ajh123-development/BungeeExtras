@@ -1,7 +1,7 @@
-package net.ddns.minersonline.bungee;
+package net.ddns.minersonline.bungee_extras.bungee;
 
-import net.ddns.minersonline.CommonExtras;
-import net.ddns.minersonline.bungee.commands.GUICommand;
+import net.ddns.minersonline.bungee_extras.CommonExtras;
+import net.ddns.minersonline.bungee_extras.bungee.commands.GUICommand;
 import net.md_5.bungee.api.plugin.Plugin;
 
 public class BungeeExtras extends Plugin implements CommonExtras {
@@ -13,7 +13,7 @@ public class BungeeExtras extends Plugin implements CommonExtras {
         plugin = this;
     }
 
-    public static CommonExtras getInstance() {
-        return BungeeExtras.plugin;
+    public CommonExtras getInstance() {
+        return plugin;
     }
 }

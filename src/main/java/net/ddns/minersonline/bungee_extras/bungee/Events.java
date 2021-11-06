@@ -1,4 +1,4 @@
-package net.ddns.minersonline.bungee;
+package net.ddns.minersonline.bungee_extras.bungee;
 
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.chat.TextComponent;
