@@ -4,6 +4,7 @@ import ch.njol.skript.SkriptAddon;
 import ch.njol.skript.lang.ExpressionType;
 import net.ddns.minersonline.bungee_extras.CommonExtras;
 import net.ddns.minersonline.bungee_extras.spigot.commands.ServerInfoCommand;
+import net.ddns.minersonline.bungee_extras.spigot.skript.expressions.ExprGetAllCitizens;
 import net.ddns.minersonline.bungee_extras.spigot.skript.expressions.ExprLocationOfCitizen;
 import org.bukkit.Location;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -29,6 +30,9 @@ public class BungeeExtras extends JavaPlugin implements CommonExtras {
                 if (this.getServer().getPluginManager().isPluginEnabled("Skript")) {
                     Skript.registerExpression(ExprLocationOfCitizen.class, Location.class, ExpressionType.SIMPLE,
                             "location of citizen %number%");
+
+                    Skript.registerExpression(ExprGetAllCitizens.class, Number.class, ExpressionType.SIMPLE,
+                            "get all citizens");
                 }else {
                     this.getLogger().warning("Citizens not found, disabling Citizens support!");
                 }

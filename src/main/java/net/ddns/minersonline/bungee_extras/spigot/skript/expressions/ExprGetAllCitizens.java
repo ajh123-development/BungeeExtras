@@ -1,41 +1,38 @@
 package net.ddns.minersonline.bungee_extras.spigot.skript.expressions;
 
-import ch.njol.skript.doc.*;
+import ch.njol.skript.doc.Description;
+import ch.njol.skript.doc.Name;
+import ch.njol.skript.doc.RequiredPlugins;
 import ch.njol.skript.lang.Expression;
 import ch.njol.skript.lang.SkriptParser.ParseResult;
 import ch.njol.skript.lang.util.SimpleExpression;
 import ch.njol.util.Kleenean;
 import net.citizensnpcs.api.CitizensAPI;
 import net.citizensnpcs.api.npc.NPC;
-import net.citizensnpcs.api.npc.NPCRegistry;
-import org.bukkit.Location;
 import org.bukkit.event.Event;
 
 import javax.annotation.Nullable;
+import java.util.ArrayList;
 
-@Name("Location of Citizen")
+@Name("Get all citizens")
 @Description({"Used for:",
-        "* Checking citizen location",
-        "This will allow you to check an NPC's location"})
+        "* Getting all citizens",
+        "This will allow you to get all NPC's"})
 @RequiredPlugins("Citizens")
-public class ExprLocationOfCitizen extends SimpleExpression<Location> {
-
-    private Expression<Number> id;
-
+public class ExprGetAllCitizens extends SimpleExpression<Number> {
     @Override
-    public Class<? extends Location> getReturnType() {
-        return Location.class;
+    public Class<? extends Number> getReturnType() {
+        return Number.class;
     }
 
     @Override
     public boolean isSingle() {
-        return true;
+        return false;
     }
 
     @SuppressWarnings("unchecked")
     @Override
     public boolean init(Expression<?>[] exp, int arg1, Kleenean arg2, ParseResult arg3) {
-        id = (Expression<Number>) exp[0];
         return true;
     }
 
@@ -45,11 +42,12 @@ public class ExprLocationOfCitizen extends SimpleExpression<Location> {
     }
 
     @Override
-    @Nullable
-    protected Location[] get(Event evt) {
-        NPCRegistry registry = CitizensAPI.getNPCRegistry();
-        NPC npc = registry.getById(id.getSingle(evt).intValue());
-        return new Location[]{npc.getStoredLocation()};
+    protected Number[] get(Event evt) {
+        ArrayList<Number> list = new ArrayList<>();
+        for (NPC npc : CitizensAPI.getNPCRegistry().sorted()) {
+            list.add(npc.getId());
+        }
+        return list.toArray(Number[]::new);
     }
 
 }
