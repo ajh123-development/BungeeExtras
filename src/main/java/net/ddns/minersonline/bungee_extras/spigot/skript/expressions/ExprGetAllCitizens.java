@@ -41,6 +41,7 @@ public class ExprGetAllCitizens extends SimpleExpression<Number> {
         return null;
     }
 
+
     @Override
     protected Number[] get(Event evt) {
         ArrayList<Number> list = new ArrayList<>();
